@@ -1,0 +1,42 @@
+leo-t-notify-push:
+  admin:
+    wecom_enabled_label: 启用企业微信推送
+    wecom_webhook_url_label: 企业微信 Webhook 地址
+    wecom_webhook_url_help: "在企业微信群机器人设置中获取。"
+    dingtalk_enabled_label: 启用钉钉机器人推送
+    dingtalk_webhook_url_label: 钉钉 Webhook 地址
+    dingtalk_webhook_url_help: "在钉钉群机器人设置中获取。"
+    dingtalk_secret_label: 钉钉加签密钥（可选）
+    dingtalk_secret_help: "如果启用了加签验证，填入以 SEC 开头的密钥。"
+    serverchan_enabled_label: 启用 Server酱 推送
+    serverchan_send_key_label: Server酱 SendKey
+    serverchan_send_key_help: "在 https://sct.ftqq.com/ 获取。"
+    email_enabled_label: 启用邮件推送
+    email_recipients_label: 收件人邮箱
+    email_recipients_help: "多个邮箱用英文逗号分隔。"
+    webhook_enabled_label: 启用通用 Webhook 推送
+    webhook_url_label: Webhook 地址
+    webhook_url_help: "JSON 格式的消息体将发送到此地址。"
+    webhook_method_label: HTTP 请求方法
+    webhook_headers_label: 自定义请求头
+    webhook_headers_help: "每行一个，格式：Key: Value"
+    push_locale_label: 推送消息语言
+    push_timezone_label: 当地时区
+    push_timezone_help: "IANA 时区名称，如 America/New_York。留空则仅显示北京时间。"
+    skip_admin_mod_label: 忽略管理员/版主的发帖与回复
+    skip_admin_mod_help: "开启后，管理员和版主的发帖与回复不会触发推送通知。"
+
+  push:
+    time_beijing: "北京时间"
+    time_local: "当地时间"
+    user_registered_title: "📢 新用户注册"
+    label_username: "用户名"
+    label_email: "邮箱"
+    label_registered_at: "注册时间"
+    discussion_started_title: "📝 新帖发布"
+    label_author: "发帖人"
+    label_topic: "标题"
+    label_content: "内容"
+    label_posted_at: "发帖时间"
+    post_created_title: "💬 新回复"
+    label_replied_at: "回帖时间"

@@ -1,0 +1,42 @@
+leo-t-notify-push:
+  admin:
+    wecom_enabled_label: Enable WeCom Push
+    wecom_webhook_url_label: WeCom Webhook URL
+    wecom_webhook_url_help: "Get it from WeCom Group Robot settings."
+    dingtalk_enabled_label: Enable DingTalk Push
+    dingtalk_webhook_url_label: DingTalk Webhook URL
+    dingtalk_webhook_url_help: "Get it from DingTalk Group Robot settings."
+    dingtalk_secret_label: DingTalk Secret (Optional)
+    dingtalk_secret_help: "If you enabled signature verification, fill in the secret starting with SEC."
+    serverchan_enabled_label: Enable ServerChan Push
+    serverchan_send_key_label: ServerChan SendKey
+    serverchan_send_key_help: "Get it from https://sct.ftqq.com/"
+    email_enabled_label: Enable Email Push
+    email_recipients_label: Email Recipients
+    email_recipients_help: "Comma separated email addresses."
+    webhook_enabled_label: Enable Webhook Push
+    webhook_url_label: Webhook URL
+    webhook_url_help: "JSON payload will be sent to this URL."
+    webhook_method_label: HTTP Method
+    webhook_headers_label: Custom Headers
+    webhook_headers_help: "One per line, format: Key: Value"
+    push_locale_label: Push Message Language
+    push_timezone_label: Local Timezone
+    push_timezone_help: "IANA timezone name, e.g. America/New_York. Leave empty to show Beijing time only."
+    skip_admin_mod_label: Skip Admin/Moderator Posts
+    skip_admin_mod_help: "When enabled, posts and replies by admins and moderators will not trigger push notifications."
+
+  push:
+    time_beijing: "Beijing Time"
+    time_local: "Local Time"
+    user_registered_title: "📢 New User Registered"
+    label_username: "Username"
+    label_email: "Email"
+    label_registered_at: "Registered At"
+    discussion_started_title: "📝 New Discussion"
+    label_author: "Author"
+    label_topic: "Title"
+    label_content: "Content"
+    label_posted_at: "Posted At"
+    post_created_title: "💬 New Reply"
+    label_replied_at: "Replied At"
