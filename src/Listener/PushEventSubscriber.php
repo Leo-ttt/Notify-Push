@@ -73,7 +73,7 @@ class PushEventSubscriber
 
         $title = $this->t('leo-t-notify-push.push.discussion_started_title', $l);
         $body = $this->buildDiscussionBody($username, $discussion->title ?? '', $content, $discussion->created_at, $l);
-        $url = $this->pushService->forumUrl('d/' . $discussion->id);
+        $url = $this->resolveModelUrl($discussion, 'd/' . $discussion->id);
 
         $this->pushService->push($title, $body, $url);
     }
@@ -106,7 +106,7 @@ class PushEventSubscriber
 
         $title = $this->t('leo-t-notify-push.push.post_created_title', $l);
         $body = $this->buildReplyBody($username, $discussion->title ?? '', $content, $post->created_at, $l);
-        $url = $this->pushService->forumUrl('d/' . $discussion->id . '/' . $post->number);
+        $url = $this->resolveModelUrl($post, 'd/' . $discussion->id . '/' . $post->number);
 
         $this->pushService->push($title, $body, $url);
     }
@@ -218,5 +218,27 @@ class PushEventSubscriber
     private function t(string $id, string $locale): string
     {
         return $this->translator->trans($id, [], 'messages', $locale);
+    }
+
+    /**
+     * Use Flarum's canonical model URL so links include the discussion slug
+     * and the correct post anchor. Keep the legacy path as a fallback for
+     * older model implementations.
+     */
+    private function resolveModelUrl(object $model, string $fallbackPath): string
+    {
+        if (method_exists($model, 'getUrl')) {
+            $url = trim((string) $model->getUrl());
+
+            if ($url !== '') {
+                if (preg_match('#^https?://#i', $url) === 1) {
+                    return $url;
+                }
+
+                return $this->pushService->forumUrl($url);
+            }
+        }
+
+        return $this->pushService->forumUrl($fallbackPath);
     }
 }
